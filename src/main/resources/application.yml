@@ -4,8 +4,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: zxy20001223ZXY
-    url: jdbc:mysql://localhost/x-admin?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
+    password: Rjgc2021
+    url: jdbc:mysql://47.113.219.99/x-admin-ecs?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
     type: com.alibaba.druid.pool.DruidDataSource
 #  jpa:
 #    generate-ddl: false
@@ -25,3 +25,14 @@ logging:
       example:
         mapper:
           debug
+
+#邮件配置
+email:
+  host: smtp.163.com
+  username: zxyniniemail@163.com
+  password: zxy20001223ZXY
+  senderName: zxyniniemail@163.com
+
+#发送提醒邮件的接收方
+sendToMail: 236699806@qq.com
+sendToPeopleName: Znn

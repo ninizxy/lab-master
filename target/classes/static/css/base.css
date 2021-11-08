@@ -8,7 +8,7 @@ ul,li{
 }
 a {
     text-decoration: none;
-    color: cornflowerblue;
+    color: #f5f5f6;
 }
 body {
     font-size:14px;
@@ -54,19 +54,19 @@ button {
     border: 8px solid;
 }
 .right {
-    background-color: deepskyblue;
+    background-color: #f8f9fa;
 }
 .left {
-    background-color: forestgreen;
+    background-color: #f8b0d5;
 }
 .left:after {
-    border-right-color: forestgreen;
+    border-right-color: #f8b0d5;
     top: 50%;
     right: 100%;
     margin-top: -9px;
 }
 .right:after {
-    border-left-color: deepskyblue;
+    border-left-color: #f4f6f6;
     left: 100%;
     top: 50%;
     margin-top: -7px;

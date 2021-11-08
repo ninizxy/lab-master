@@ -20,7 +20,7 @@ import java.util.Map;
 public class MybatisCodeGenerator {
     private static final DruidDataSource ds = new DruidDataSource();
 
-    private static final String schemaName = "x-admin";   // 数据库名称，必填
+    private static final String schemaName = "x-admin-ecs";   // 数据库名称，必填
     private static final String[] table = {"book", ""};   // 必填，第一个是表名，第二个是实体类的名字
     private static final String modelName = "图书";   // 必填
 
@@ -28,9 +28,10 @@ public class MybatisCodeGenerator {
 
     static {
         // 必填
-        ds.setUrl("jdbc:mysql://localhost/" + schemaName + "?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=UCT");
+        ds.setUrl("jdbc:mysql://47.113.219.99/" + schemaName + "?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=UCT");
         ds.setUsername("root");
-        ds.setPassword("zxy20001223ZXY");
+       // ds.setPassword("zxy20001223ZXY");
+        ds.setPassword("Rjcg2021");
     }
 
     private static final String BaseFilePath = System.getProperty("user.dir") + "/src/main/java/com/example/";

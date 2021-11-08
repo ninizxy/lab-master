@@ -4,12 +4,11 @@ znn的碎碎念：
 
 ·项目结构：
    后端：
-   SpringBoot 2.1.0 + Mybatis-plus+ hutool工具包 + Apache poi
+   SpringBoot 2.1.0 + Mybatis-plus + hutool工具包 + Apache poi
 
    相关文件说明：
    Java文件夹下所有
    pom.xml：所有使用到的依赖都要在此声明
-
 
    前端：
    Vue2.0 + ElementUI + Jquery + tinymce（富文本插件）
@@ -22,7 +21,6 @@ znn的碎碎念：
    js:存放js文件，设置逻辑
    page.end:存放end相关html文件
    page.front：存放front相关html文件
-
 
 ·移植后如何跑通项目
    设置数据库：

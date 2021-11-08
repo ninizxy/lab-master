@@ -41,8 +41,7 @@
                 <el-button type="primary" @click="edit(scope.row)"  icon="el-icon-edit" circle ></el-button>
                 <el-popconfirm
                         @onConfirm="del(scope.row.id)"
-                        title="确定删除？"
-                >
+                        title="确定删除？">
                     <el-button type="danger" icon="el-icon-delete" circle slot="reference" ></el-button>
                 </el-popconfirm>
             </template>
@@ -104,8 +103,6 @@
         created() {
             this.user = sessionStorage.getItem("user") ? JSON.parse(sessionStorage.getItem("user")) : {};
             this.loadTable();
-
-
         },
         methods: {
             handleCollapse() {
@@ -120,6 +117,8 @@
                 $.get(urlBase + "/page?pageNum=" + this.pageNum + "&pageSize=" + this.pageSize + "&name=" + this.search).then(res => {
                     this.tableData = res.data.records;
                     this.total = res.data.total;
+                    console.log(res)
+
                 })
             },
             exp() {
@@ -138,6 +137,7 @@
                 this.dialogFormVisible = true;
             },
             save() {
+                // console.log(this.entity)
                 let type = this.entity.id ? "PUT" : "POST";
                 $.ajax({
                     url: urlBase,
