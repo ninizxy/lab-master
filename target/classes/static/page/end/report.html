@@ -99,9 +99,16 @@
 
 
 <script>
-
     let urlBase;
     urlBase = "/api/report/";
+    const isNum = (rule, value, callback) => {
+        const age= /^[0-9]*$/
+        if (!age.test(value)) {
+            callback(new Error('数值部分只能为数字'))
+        }else{
+            callback()
+        }
+    }
     new Vue({
         el: "#wrapper",
         data() {
@@ -183,8 +190,11 @@
                     corrected:0,
                 },
                 skuRule: {
-                    num: [{ required: true, message: '该项不能为空', trigger: 'blur' }],
-                    remark: [{ required: true, message: '该项不能为空', trigger: 'blur' }],
+                    数值: [
+                        { required: true, message: '请输入数值', trigger: 'blur' },
+                        { validator: isNum, trigger: 'blur' }
+                    ],
+                    备注: [{}],
                 },
             };
         },

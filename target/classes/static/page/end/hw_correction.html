@@ -31,7 +31,8 @@
                   @keyup.enter.native="loadTable"></el-input>
         </el-upload>
 
-        <el-form :model="listModel" ref="listModel">
+        <el-form :model="listModel" ref="listModel" :rules="skuRule">
+
             <el-table :data="listModel.sku_list" border stripe>
                 <el-table-column prop="id" label="学生ID" width="50"></el-table-column>
                 <el-table-column prop="num1" label="数值1"></el-table-column>
@@ -92,6 +93,14 @@
 <script>
 
     let urlBase = "/api/hw_correction/";
+    const isNum = (rule, value, callback) => {
+        const age= /^[0-9]*$/
+        if (!age.test(value)) {
+            callback(new Error('数值部分只能为数字'))
+        }else{
+            callback()
+        }
+    }
     new Vue({
         el: "#wrapper",
         data: {
@@ -103,13 +112,14 @@
             isCollapse: false,
             search: '',
             options: [],
-            search: '',
             listModel: {
                 sku_list:[]
             },
             skuRule: {
-                num: [{ required: true, message: '该项不能为空', trigger: 'blur' }],
-                remark: [{ required: true, message: '该项不能为空', trigger: 'blur' }],
+                the_score: [
+                    { required: true, message: '请输入分数', trigger: 'blur' },
+                    { validator: isNum, trigger: 'blur' }
+                ],
             }
         },
         created() {
