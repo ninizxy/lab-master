@@ -8,12 +8,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="x-admin-master" />
+        <module name="lab-master" />
         <module name="x-admin" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="lab-master" options="-parameters" />
       <module name="x-admin" options="-parameters" />
       <module name="x-admin-master" options="-parameters" />
     </option>
