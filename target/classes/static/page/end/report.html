@@ -76,8 +76,8 @@
         <span>备注3：{{this.seeEntity.remark3}}</span></br>
         <span>备注4：{{this.seeEntity.remark4}}</span></br>
         <span>备注5：{{this.seeEntity.remark5}}</span>
-
-<!--        <el-table :data = "this.seeEntity" border style="width: 100%">-->这种方式走不通
+<!--        这种方式走不通-->
+<!--        <el-table :data = "this.seeEntity" border style="width: 100%">-->
 <!--            <el-table-column prop="num1" label="数值1"></el-table-column>-->
 <!--            <el-table-column prop="num2" label="数值2"></el-table-column>-->
 <!--            <el-table-column prop="num3" label="数值3"></el-table-column>-->
@@ -265,7 +265,7 @@
                 this.entity.report_id = 1,
                     $.ajax({
                         url: urlBase,
-                        type: 'POST',
+                        type: 'PUT',
                         contentType: "application/json",
                         data: JSON.stringify(this.entity)
                     }).then(res => {

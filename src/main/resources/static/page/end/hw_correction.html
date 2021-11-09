@@ -147,6 +147,7 @@
             },
             save(sid) {
                 sid.corrected=1;
+                sid.report_id=1;
                 $.ajax({
                     url: urlBase,
                     type: 'PUT',

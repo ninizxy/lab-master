@@ -265,7 +265,7 @@
                 this.entity.report_id = 1,
                     $.ajax({
                         url: urlBase,
-                        type: 'POST',
+                        type: 'PUT',
                         contentType: "application/json",
                         data: JSON.stringify(this.entity)
                     }).then(res => {
