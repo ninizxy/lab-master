@@ -63,6 +63,7 @@
         <el-button type="primary"  @click="save()">暂 存</el-button>
         <el-button type="primary" @click="submit()">提 交</el-button>
         <el-button type="text" @click="dialogFormVisible = true" >查看上次提交/暂存内容</el-button>
+        <el-button type="text" @click="vis = true" >查看实验指导书</el-button>
     </div>
 
     <el-dialog title="历史提交/暂存内容" :visible.sync="dialogFormVisible" width="40%" :close-on-click-modal="false">
@@ -90,6 +91,8 @@
 <!--            <el-table-column prop="remark5" label="备注5"></el-table-column>-->
 <!--        </el-table>-->
     </el-dialog>
+
+    <el-dialog title="实验指导书" :visible.sync="vis" width="40%" :close-on-click-modal="false"></el-dialog>
 </div>
 
 <script src="../../js/jquery.min.js"></script>
@@ -114,6 +117,7 @@
         data() {
             user: {}
             return {
+                vis:false,
                 dialogFormVisible: false,
                 listModel: {
                     sku_list: [
